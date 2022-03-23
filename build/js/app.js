@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     obtenerUrl();
     agregarMateria();
-    
+    consultarAPI();
     
 });
 
@@ -56,3 +56,11 @@ function obtenerUrl(){
     }
 }
 
+function consultarAPI(){
+
+    url = 'http://localhost/calificaciones/admin/maestros.php/';
+    fetch(url)
+        .then(respuesta =>respuesta.json())
+        .then(resultado => console.log(resultado))
+        .catch(error => console.log(error))
+}
